@@ -1,0 +1,17 @@
+<div *ngFor="let question of summary;">
+    <mat-card class="summary-card">
+        <mat-card-title>{{question.text}}</mat-card-title>
+        <mat-card-subtitle>{{question.category}}/{{question.subcategory}}</mat-card-subtitle>
+        <p>Multiple answers: {{question.multiSelect}}</p>
+        <p>Correct answers:</p>
+        <ol >
+            <li *ngFor="let correctAnswer of question.correctAnswers">{{correctAnswer.text}}</li>
+        </ol>
+        <p>Your answers:</p>
+        <ol>
+            <li *ngFor="let customerAnswer of question.customerAnswers">{{customerAnswer.text}}</li>
+        </ol>
+        <p>{{question.explanation}}</p>
+    </mat-card>
+</div>
+

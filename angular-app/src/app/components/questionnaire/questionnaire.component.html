@@ -1,0 +1,19 @@
+<form>
+    <div *ngFor="let question of questions; let i = index" [hidden]="i != currentQuestion">
+        <mat-card>
+            <mat-card-title>{{question.text}}</mat-card-title>
+            <mat-card-subtitle>{{question.category}}/{{question.subcategory}}</mat-card-subtitle>
+            <p>Multiple answers: {{question.multiselect}}</p>
+            <div class="answer" *ngFor="let answer of question.answers">
+                <mat-checkbox color="primary" id="{{answer.id}}" [(ngModel)]="answer.isCorrect" name="answer.text">{{answer.text}}</mat-checkbox>
+            </div>
+            <div class="nav-bar">
+                <button mat-raised-button color="primary" type='button' (click)="previous()"
+                *ngIf="isFirst">Previous</button>
+                <button mat-raised-button color="primary" type='button' (click)="next()" *ngIf="!isLast">Next</button>
+                <button mat-raised-button color="primary" type="submit" (click)="submit()"
+                *ngIf="isLast">Submit</button>
+            </div>
+        </mat-card>
+    </div>
+</form>

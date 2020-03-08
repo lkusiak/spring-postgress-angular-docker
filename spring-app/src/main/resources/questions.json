@@ -1,0 +1,202 @@
+[
+  {
+    "category": "Container, Dependency, And IOC",
+    "subCategory": "Dependency injection using annotations (@Component, @Autowired)",
+    "multiSelect": true,
+    "text": "Which ones are true about dependency autowiring?  Select all that apply.",
+    "answers": [
+      {
+        "text": "There can be multiple constructor methods annotated with @Autowired, but only 1 of them can be set as required.",
+        "isCorrect": true
+      },
+      {
+        "text": "If dependencies annotated with @Required are not set, a corresponding exception is raised.",
+        "isCorrect": true
+      },
+      {
+        "text": "If the Autowired annotation is used on well-known dependencies like BeanFactory and ApplicationContext, these dependencies like BeanFactory and ApplicationContext, must be explicitly defined in the context  (e.g. defined in XML-based configuration).",
+        "isCorrect": false
+      },
+      {
+        "text": "MessageSource interface is automatically resolved, with no additional setup necessary, other than putting the 'Autowired' annotation.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "There can be multiple constructor methods annotated with @Autowired, but only 1 of them can be set as required.\r\n\r\nIf dependencies annotated with @Required are not set, a corresponding exception is raised.\r\n\r\nIf the Autowired annotation is used on well-known dependencies like BeanFactory and ApplicationContext, these dependencies like BeanFactory and ApplicationContext, do not need to be explicitly defined in the context  (e.g. in XML-based configuration).\r\n\r\nMessageSource interface is automatically resolved, with no additional setup necessary, other than putting the 'Autowired' annotation."
+  },
+  {
+    "category": "JDBC, Transactions, And ORM",
+    "subCategory": "What is the idea behind an ORM? What are benefits/disadvantages or ORM?",
+    "multiSelect": false,
+    "text": "Which of these is the one being described below?  Select the one that applies best.\r\n\r\n     Its advantages include:  faster development, lesser repetitive SQL code, and less if any at all need to deal with vendor-specific SQL and database issues.  Its disadvantages include:  a little more initial learning curve needed, and can be a little slower than SQL queries when it comes to complex queries.",
+    "answers": [
+      {
+        "text": "AOP",
+        "isCorrect": false
+      },
+      {
+        "text": "JDBC",
+        "isCorrect": false
+      },
+      {
+        "text": "OXM",
+        "isCorrect": false
+      },
+      {
+        "text": "ORM",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The advantages of ORM include:  faster development, lesser repetitive SQL code, and less if any at all need to deal with vendor-specific SQL and database issues.  Its disadvantages include:  a little more initial learning curve needed, and can be a little slower than SQL queries when it comes to complex queries."
+  },
+  {
+    "category": "JDBC, Transactions, And ORM",
+    "subCategory": "Why is the term \"unit of work\" so important and why does JDBC AutoCommit violate this pattern?",
+    "multiSelect": false,
+    "text": "Fill in the blanks.  The term __________ usually represents a set of actions treated as one and undone also as one if needed.  The __________ mode of JDBC should be disabled so that sets of actions can be undone as one.  Select the one that applies best.",
+    "answers": [
+      {
+        "text": "JTA, concurrency",
+        "isCorrect": false
+      },
+      {
+        "text": "auto-commit, unit of work",
+        "isCorrect": false
+      },
+      {
+        "text": "transaction demarcation, rollback",
+        "isCorrect": false
+      },
+      {
+        "text": "unit of work, auto-commit",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "The term 'unit of work' usually represents a set of actions treated as one and undone also as one if needed.  The 'auto-commit' mode of JDBC should be disabled so that sets of actions can be undone as one."
+  },
+  {
+    "category": "Spring MVC And The Web Layer",
+    "subCategory": "What are some of the valid return types of a controller method?",
+    "multiSelect": true,
+    "text": "In Spring MVC, which of these can be the return type of a method annotated with @RequestMapping?  Select all that apply.",
+    "answers": [
+      {
+        "text": "ModelAndView",
+        "isCorrect": true
+      },
+      {
+        "text": "Model",
+        "isCorrect": true
+      },
+      {
+        "text": "void",
+        "isCorrect": true
+      },
+      {
+        "text": "String",
+        "isCorrect": true
+      }
+    ],
+    "explanation": ""
+  },
+  {
+    "category": "Container, Dependency, And IOC",
+    "subCategory": "What is the concept of a container and what is its lifecycle?",
+    "multiSelect": true,
+    "text": "The Spring container gets its instructions by consuming the configuration metadata.  Which of these forms can represent the Spring configuration metadata?  Choose all that apply.",
+    "answers": [
+      {
+        "text": "XML-based",
+        "isCorrect": true
+      },
+      {
+        "text": "Annotation-based",
+        "isCorrect": true
+      },
+      {
+        "text": "Java-based",
+        "isCorrect": true
+      },
+      {
+        "text": "Property-file-based",
+        "isCorrect": false
+      }
+    ],
+    "explanation": ""
+  },
+  {
+    "category": "JDBC, Transactions, And ORM",
+    "subCategory": "What does @PersistenceContext do?",
+    "multiSelect": false,
+    "text": "Fill in the blanks.  ________  expresses the usage of an EntityManager and its associated persistence context.  This is also the annotation in the blank in the code below.\r\n\r\n     ________\r\n     private EntityManager entityManager;",
+    "answers": [
+      {
+        "text": "@PersistenceUnit",
+        "isCorrect": false
+      },
+      {
+        "text": "@PersistenceContext",
+        "isCorrect": true
+      },
+      {
+        "text": "@EntityManagerResource",
+        "isCorrect": false
+      },
+      {
+        "text": "@Entity",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "Below is an example.\r\n\r\n     @Repository\r\n     public class JpaMyService implements MyService {\r\n          @PersistenceContext\r\n          private EntityManager entityManager;\r\n          .....\r\n     }\r\n\r\nThere is no @EntityManagerResource for this purpose."
+  },
+  {
+    "category": "Spring Boot",
+    "subCategory": "What is the difference between an embedded container and a WAR?",
+    "multiSelect": true,
+    "text": "Which of these are true about creating a deployable war file in Spring Boot?  Select all that apply.",
+    "answers": [
+      {
+        "text": "When creating a 'war' file which will be deployed into a server, it is best to add the 'external' setting below, to avoid the server files being included in the 'war'.\r\n\r\n\t<dependency>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-tomcat</artifactId>\r\n\t\t<scope>external</scope>\r\n\t</dependency>",
+        "isCorrect": false
+      },
+      {
+        "text": "If you use Maven and spring-boot-starter-parent, you must change the pom.xml 'packaging' setting to below.\r\n\r\n    <packaging>war</packaging>",
+        "isCorrect": true
+      },
+      {
+        "text": "If you use Maven and spring-boot-starter-parent, you must change the pom.xml 'artifact' setting to below.\r\n\r\n    <artifact>non-embedded</artifact>",
+        "isCorrect": false
+      },
+      {
+        "text": "The first step in producing a deployable war file is to provide a SpringBootServletInitializer subclass.",
+        "isCorrect": true
+      }
+    ],
+    "explanation": "When creating a 'war' file which will be deployed into a server, it is best to add the 'provided' setting below, to avoid the server files being included in the 'war'.\r\n\r\n\t<dependency>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-tomcat</artifactId>\r\n\t\t<scope>provided</scope>\r\n\t</dependency>\r\n\r\nIf you use Maven and spring-boot-starter-parent, you must change the pom.xml 'packaging' setting to below.\r\n\r\n    <packaging>war</packaging>\r\n\r\nThere is no related 'artifact' or 'non-embedded' setting needed.\r\n\r\nThe first step in producing a deployable war file is to provide a SpringBootServletInitializer subclass."
+  },
+  {
+    "category": "JDBC, Transactions, And ORM",
+    "subCategory": "What is a transaction isolation level? How many do we have and how are they ordered?",
+    "multiSelect": true,
+    "text": "On which of these database system isolation levels can phantom reads occur?  Select all that apply.",
+    "answers": [
+      {
+        "text": "Serializable",
+        "isCorrect": false
+      },
+      {
+        "text": "Repeatable reads",
+        "isCorrect": true
+      },
+      {
+        "text": "Read committed",
+        "isCorrect": true
+      },
+      {
+        "text": "Read uncommitted",
+        "isCorrect": true
+      }
+    ],
+    "explanation": ""
+  }
+]
